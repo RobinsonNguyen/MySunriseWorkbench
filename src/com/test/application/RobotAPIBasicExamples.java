@@ -30,8 +30,6 @@ import com.kuka.med.deviceModel.LBRMed;
 public class RobotAPIBasicExamples extends RoboticsAPIApplication {
 	@Inject
 	private LBRMed robot;
-	//@Inject 
-	//private ISceneGraph sceneGraph;
 	@Inject 
 	private World world;
 
