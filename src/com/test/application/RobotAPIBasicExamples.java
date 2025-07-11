@@ -41,7 +41,7 @@ public class RobotAPIBasicExamples extends RoboticsAPIApplication {
 		// your application execution starts here
 		getLogger().info("Hello World");
 		
-		robot.getFlange().move(ptpHome());
+		robot.getFlange().move(ptpHome().setJointVelocityRel(.4));
 		//sceneGraph.getWorld().findFrame("/P1");
 		robot.move(ptp(getApplicationData().getFrame("/P1")).setJointVelocityRel(0.1));
 		
