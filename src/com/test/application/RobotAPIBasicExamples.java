@@ -5,8 +5,10 @@ import javax.inject.Inject;
 import com.kuka.roboticsAPI.applicationModel.RoboticsAPIApplication;
 import com.kuka.roboticsAPI.geometricModel.ObjectFrame;
 import com.kuka.roboticsAPI.geometricModel.World;
+import com.kuka.roboticsAPI.motionModel.IMotionContainer;
 
 import static com.kuka.roboticsAPI.motionModel.BasicMotions.*;
+
 import com.kuka.med.deviceModel.LBRMed;
 
 /**
@@ -41,9 +43,9 @@ public class RobotAPIBasicExamples extends RoboticsAPIApplication {
 		// your application execution starts here
 		getLogger().info("Hello World");
 		
-		robot.getFlange().move(ptpHome());
+		robot.move(ptpHome());
 		//sceneGraph.getWorld().findFrame("/P1");
-		robot.move(ptp(getApplicationData().getFrame("/P1")).setJointVelocityRel(0.1));
+		robot.move(ptp(getApplicationData().getFrame("/P1")).setJointVelocityRel(0.4));
 
 	}
 }
