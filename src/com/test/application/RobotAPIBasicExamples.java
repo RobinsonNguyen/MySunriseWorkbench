@@ -43,7 +43,7 @@ public class RobotAPIBasicExamples extends RoboticsAPIApplication {
 		
 		robot.getFlange().move(ptpHome().setJointVelocityRel(.4));
 		//sceneGraph.getWorld().findFrame("/P1");
-		robot.move(ptp(getApplicationData().getFrame("/P1")).setJointVelocityRel(0.1));
+		robot.move(ptp(getApplicationData().getFrame("/P1")).setJointVelocityRel(0.4));
 		
 
 	}
