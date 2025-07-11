@@ -30,8 +30,6 @@ import com.kuka.med.deviceModel.LBRMed;
 public class RobotAPIBasicExamples extends RoboticsAPIApplication {
 	@Inject
 	private LBRMed robot;
-	@Inject 
-	private World world;
 
 	@Override
 	public void initialize() {
@@ -45,7 +43,7 @@ public class RobotAPIBasicExamples extends RoboticsAPIApplication {
 		
 		robot.getFlange().move(ptpHome());
 		//sceneGraph.getWorld().findFrame("/P1");
-		ObjectFrame targetFrame = world.getFrame("P1");
-		robot.getFlange().move(lin(targetFrame));
+		robot.move(ptp(getApplicationData().getFrame("/P1")).setJointVelocityRel(0.1));
+
 	}
 }
