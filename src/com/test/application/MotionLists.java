@@ -46,7 +46,7 @@ public class MotionLists extends RoboticsAPIApplication {
 		getApplicationControl().setApplicationOverride(override);
 		ObjectFrame P1 = getApplicationData().getFrame("/P1");
 		ObjectFrame P2 = getApplicationData().getFrame("/P2");
-		ObjectFrame P3 = getApplicationData().getFrame("/P3");
+		ObjectFrame P3 = getApplicationData().getFrame("/P2/P3");
 		
 		List<IMotionContainer> motionList = new LinkedList<IMotionContainer>();
 		motionList.add(robot.move(ptp(P1).setJointVelocityRel(0.3)));	
