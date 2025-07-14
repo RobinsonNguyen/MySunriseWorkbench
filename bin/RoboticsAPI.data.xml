@@ -33,10 +33,10 @@
                     <info type="com.kuka.roboticsAPI.deviceModel.LBRE1Redundancy$E1Parameter" value="-0.5222257230031764" valueType="java.lang.Double"/>
                 </redundancy>
             </redundancyData>
-            <frame id="_a5bb7a53-077b-4298-8b48-068ce3c00745" name="P1">
-                <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <frame id="_a5bb7a53-077b-4298-8b48-068ce3c00745" name="P3">
+                <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="10.0"/>
                 <additionalInformation>
-                    <info key="LastModificationTime" type="java.lang.Long" value="1752137294101"/>
+                    <info key="LastModificationTime" type="java.lang.Long" value="1752504779336"/>
                     <info base="LBR_Med_14_R820_1" controller="KUKA_Sunrise_Cabinet_1" device="LBR_Med_14_R820_1" tcpName="Flange" tool="Flange" type="com.kuka.roboticsAPI.deviceModel.TeachInformation">
                         <tcpTransformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
                     </info>
