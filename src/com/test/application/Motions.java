@@ -61,7 +61,7 @@ public class Motions extends RoboticsAPIApplication {
 		getApplicationControl().registerMoveAsyncErrorHandler(errorHandler);
 		double override = 0.1;
 		getApplicationControl().setApplicationOverride(override);
-		IMotionContainer imc = robot.move(ptp(getApplicationData().getFrame("/P1")).setJointVelocityRel(0.4));
+		IMotionContainer imc = robot.move(ptp(getApplicationData().getFrame("/P3")).setJointVelocityRel(0.4));
 		
 		while(!imc.isFinished()){
 			sensorData = robot.getExternalForceTorque(robot.getFlange());
