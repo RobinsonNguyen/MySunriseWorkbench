@@ -59,7 +59,7 @@ public class Motions extends RoboticsAPIApplication {
 		};
 		
 		getApplicationControl().registerMoveAsyncErrorHandler(errorHandler);
-		double override = 0.1;
+		double override = 0.3;
 		getApplicationControl().setApplicationOverride(override);
 		IMotionContainer imc = robot.move(ptp(getApplicationData().getFrame("/P3")).setJointVelocityRel(0.4));
 		
