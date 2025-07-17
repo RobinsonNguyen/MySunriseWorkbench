@@ -13,6 +13,7 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 import java.io.FileWriter;
+import java.io.File;
 
 /**
  * Implementation of a robot application.
@@ -45,6 +46,7 @@ public class ScaleForceTest extends RoboticsAPIApplication {
 	public void run() {
 		// your application execution starts here
 		try {
+			File myObj = new File("testlog.txt");
 			FileWriter myWriter = new FileWriter("testlog.txt");
 			myWriter.write("first test line");
 			myWriter.write("second test line");
