@@ -45,6 +45,7 @@ public class ScaleForceTest extends RoboticsAPIApplication {
 	@Override
 	public void run() {
 		// your application execution starts here
+		getLogger().info("Starting test...");
 		try {
 			File myObj = new File("testlog.txt");
 			if(myObj.createNewFile()){
@@ -56,6 +57,7 @@ public class ScaleForceTest extends RoboticsAPIApplication {
 			myWriter.close();
 		} catch (Exception e) {
 			// TODO: handle exception
+			getLogger().info("There was an error: " + e.toString());
 			
 		}
 	}
