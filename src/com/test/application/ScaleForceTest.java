@@ -53,11 +53,11 @@ public class ScaleForceTest extends RoboticsAPIApplication {
 	@Override
 	public void run() {
 		// your application execution starts here
-		sensorData = robot.getExternalForceTorque(robot.getFlange());
-		double zForce = 0;
+		
 		for (int i = 0; i < 5; i++) {
-			zForce = sensorData.getForce().getZ();
-			getLogger().info("Force in Z vector" + zForce);
+			sensorData = robot.getExternalForceTorque(robot.getFlange());
+			double zForce = sensorData.getForce().getZ();
+			getLogger().info("Force in Z vector: " + zForce);
 			ThreadUtil.milliSleep(2000);
 		}
 		
