@@ -47,6 +47,9 @@ public class ScaleForceTest extends RoboticsAPIApplication {
 		// your application execution starts here
 		try {
 			File myObj = new File("testlog.txt");
+			if(myObj.createNewFile()){
+				getLogger().info("File was created");
+			}
 			FileWriter myWriter = new FileWriter("testlog.txt");
 			myWriter.write("first test line");
 			myWriter.write("second test line");
