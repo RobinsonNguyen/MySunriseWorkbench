@@ -3,7 +3,13 @@ package com.test.application;
 
 import javax.inject.Inject;
 import com.kuka.roboticsAPI.applicationModel.RoboticsAPIApplication;
+import com.kuka.roboticsAPI.conditionModel.ForceCondition;
+import com.kuka.roboticsAPI.sensorModel.DataRecorder;
+import com.kuka.roboticsAPI.sensorModel.StartRecordingAction;
+
 import static com.kuka.roboticsAPI.motionModel.BasicMotions.*;
+
+import com.kuka.common.ThreadUtil;
 import com.kuka.med.deviceModel.LBRMed;
 
 import java.io.IOException;
@@ -45,21 +51,34 @@ public class ScaleForceTest extends RoboticsAPIApplication {
 	@Override
 	public void run() {
 		// your application execution starts here
-		getLogger().info("Starting test...");
-		try {
-			File myObj = new File("testlog.txt");
-			if(myObj.createNewFile()){
-				getLogger().info("File was created");
-			}
-			FileWriter myWriter = new FileWriter("testlog.txt");
-			myWriter.write("first test line");
-			myWriter.write("second test line");
-			myWriter.close();
-		} catch (Exception e) {
-			// TODO: handle exception
-			getLogger().info("There was an error: " + e.toString());
-			
-		}
+		//DataRecorder rec_1 = new DataRecorder("Recording_1.log",5,TimeUnit.SECONDS,100);
+		DataRecorder rec = new DataRecorder();
+		rec.setFileName("ScaleTest.log");
+		rec.setSampleInterval(2);
+		rec.addCartesianForce(getApplicationData().getFrame("/P3"), null);
+		//StartRecordingAction startAction = new StartRecordingAction(rec);
+		//ForceCondition startCondition = ForceCondition.createSpatialForceCondition(getApplicationData().getFrame("/P3"), 2.0);
+		getLogger().info("Starting recording...");
+		rec.startRecording();
+		ThreadUtil.milliSleep(5000);
+		getLogger().info("Stop recording...");
+		rec.stopRecording();
+		///////////////////////////////////////
+//		getLogger().info("Starting test...");
+//		try {
+//			File myObj = new File("testlog.txt");
+//			if(myObj.createNewFile()){
+//				getLogger().info("File was created");
+//			}
+//			FileWriter myWriter = new FileWriter("testlog.txt");
+//			myWriter.write("first test line");
+//			myWriter.write("second test line");
+//			myWriter.close();
+//		} catch (Exception e) {
+//			// TODO: handle exception
+//			getLogger().info("There was an error: " + e.toString());
+//			
+//		}
 	}
 }
 	
