@@ -55,7 +55,7 @@ public class ScaleForceTest extends RoboticsAPIApplication {
 		DataRecorder rec = new DataRecorder();
 		rec.setFileName("ScaleTest.log");
 		rec.setSampleInterval(2);
-		rec.addCartesianForce(getApplicationData().getFrame("/P3"), null);
+		rec.addCartesianForce(robot.getFlange(), null);
 		//StartRecordingAction startAction = new StartRecordingAction(rec);
 		//ForceCondition startCondition = ForceCondition.createSpatialForceCondition(getApplicationData().getFrame("/P3"), 2.0);
 		getLogger().info("Starting recording...");

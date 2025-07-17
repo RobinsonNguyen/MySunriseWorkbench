@@ -71,7 +71,7 @@
         <toolTemplate class="" name="Gripper">
             <frames>
                 <frame id="_fc5252a7-00cf-4134-b6a2-c628204eec83" name="TCP">
-                    <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="50.0"/>
+                    <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
                     <additionalInformation>
                         <info key="Radius" type="java.lang.Integer" value="25"/>
                         <info key="SafetyID" type="java.lang.Integer" value="0"/>
