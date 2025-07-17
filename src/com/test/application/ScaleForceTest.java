@@ -53,27 +53,27 @@ public class ScaleForceTest extends RoboticsAPIApplication {
 	@Override
 	public void run() {
 		// your application execution starts here
-//		sensorData = robot.getExternalForceTorque(robot.getFlange());
-//		double zForce = 0;
-//		for (int i = 0; i < 5; i++) {
-//			zForce = sensorData.getForce().getZ();
-//			getLogger().info("Force in Z vector" + zForce);
-//			ThreadUtil.milliSleep(2000);
-//		}
+		sensorData = robot.getExternalForceTorque(robot.getFlange());
+		double zForce = 0;
+		for (int i = 0; i < 5; i++) {
+			zForce = sensorData.getForce().getZ();
+			getLogger().info("Force in Z vector" + zForce);
+			ThreadUtil.milliSleep(2000);
+		}
 		
 		////////////////////////////////////////////////
 		//DataRecorder rec_1 = new DataRecorder("Recording_1.log",5,TimeUnit.SECONDS,100);
-		DataRecorder rec = new DataRecorder();
-		rec.setFileName("ScaleTest.log");
-		rec.setSampleInterval(2);
-		rec.addCartesianForce(robot.getFlange(), null);
-		//StartRecordingAction startAction = new StartRecordingAction(rec);
-		//ForceCondition startCondition = ForceCondition.createSpatialForceCondition(getApplicationData().getFrame("/P3"), 2.0);
-		getLogger().info("Starting recording...");
-		rec.startRecording();
-		ThreadUtil.milliSleep(5000);
-		getLogger().info("Stop recording...");
-		rec.stopRecording();
+//		DataRecorder rec = new DataRecorder();
+//		rec.setFileName("ScaleTest.log");
+//		rec.setSampleInterval(2);
+//		rec.addCartesianForce(robot.getFlange(), null);
+//		//StartRecordingAction startAction = new StartRecordingAction(rec);
+//		//ForceCondition startCondition = ForceCondition.createSpatialForceCondition(getApplicationData().getFrame("/P3"), 2.0);
+//		getLogger().info("Starting recording...");
+//		rec.startRecording();
+//		ThreadUtil.milliSleep(5000);
+//		getLogger().info("Stop recording...");
+//		rec.stopRecording();
 		///////////////////////////////////////
 //		getLogger().info("Starting test...");
 //		try {
