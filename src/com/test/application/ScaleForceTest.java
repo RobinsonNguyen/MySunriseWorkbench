@@ -5,6 +5,7 @@ import javax.inject.Inject;
 import com.kuka.roboticsAPI.applicationModel.RoboticsAPIApplication;
 import com.kuka.roboticsAPI.conditionModel.ForceCondition;
 import com.kuka.roboticsAPI.sensorModel.DataRecorder;
+import com.kuka.roboticsAPI.sensorModel.ForceSensorData;
 import com.kuka.roboticsAPI.sensorModel.StartRecordingAction;
 
 import static com.kuka.roboticsAPI.motionModel.BasicMotions.*;
@@ -42,6 +43,7 @@ import java.io.File;
 public class ScaleForceTest extends RoboticsAPIApplication {
 	@Inject
 	private LBRMed robot;
+	private ForceSensorData sensorData;
 
 	@Override
 	public void initialize() {
@@ -51,6 +53,15 @@ public class ScaleForceTest extends RoboticsAPIApplication {
 	@Override
 	public void run() {
 		// your application execution starts here
+//		sensorData = robot.getExternalForceTorque(robot.getFlange());
+//		double zForce = 0;
+//		for (int i = 0; i < 5; i++) {
+//			zForce = sensorData.getForce().getZ();
+//			getLogger().info("Force in Z vector" + zForce);
+//			ThreadUtil.milliSleep(2000);
+//		}
+		
+		////////////////////////////////////////////////
 		//DataRecorder rec_1 = new DataRecorder("Recording_1.log",5,TimeUnit.SECONDS,100);
 		DataRecorder rec = new DataRecorder();
 		rec.setFileName("ScaleTest.log");
