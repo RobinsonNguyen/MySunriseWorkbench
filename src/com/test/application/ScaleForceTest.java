@@ -112,7 +112,7 @@ public class ScaleForceTest extends RoboticsAPIApplication {
 		switch(ret){
 		case 0:
 			getLogger().info("Moving to start frame...");
-			robot.move(ptp(getApplicationData().getFrame("/StartScaleForce")).setJointVelocityRel(0.4));
+			ScaleForceFixture.move(ptp(getApplicationData().getFrame("/StartScaleForce")).setJointVelocityRel(0.4));
 			break;
 		case 1:
 			getLogger().info("doing nothing");
