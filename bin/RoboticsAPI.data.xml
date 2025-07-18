@@ -67,9 +67,9 @@
             </redundancyData>
         </frame>
         <frame id="_ca609eaf-93cb-4de4-9c3b-9e8ac02d691d" name="StartScaleForce">
-            <transformation a="-3.1245957832867677" b="-0.01677686723733937" c="-3.137448070906168" x="-325.2460828424198" y="275.14037754145846" z="249.7320627431482"/>
+            <transformation a="-3.1246058682595548" b="-0.016605656075407114" c="-3.1374798014743273" x="-325.2060646077571" y="275.1513178639421" z="250.09351830960543"/>
             <additionalInformation>
-                <info key="LastModificationTime" type="java.lang.Long" value="1752842818397"/>
+                <info key="LastModificationTime" type="java.lang.Long" value="1752842580077"/>
                 <info base="LBR_Med_14_R820_1" controller="KUKA_Sunrise_Cabinet_1" device="LBR_Med_14_R820_1" tcpName="ScaleForceFixture/TCP" tool="ScaleForceFixture" type="com.kuka.roboticsAPI.deviceModel.TeachInformation">
                     <tcpTransformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="37.0"/>
                 </info>
@@ -78,7 +78,7 @@
                 <redundancy transformationProviderName="KUKA_Sunrise_Cabinet_1/LBR_Med_14_R820_1" type="com.kuka.roboticsAPI.deviceModel.LBRE1Redundancy">
                     <info type="com.kuka.roboticsAPI.deviceModel.StatusTurnRedundancy$StatusParameter" value="5" valueType="java.lang.Integer"/>
                     <info type="com.kuka.roboticsAPI.deviceModel.StatusTurnRedundancy$TurnParameter" value="115" valueType="java.lang.Integer"/>
-                    <info type="com.kuka.roboticsAPI.deviceModel.LBRE1Redundancy$E1Parameter" value="0.6866417985423714" valueType="java.lang.Double"/>
+                    <info type="com.kuka.roboticsAPI.deviceModel.LBRE1Redundancy$E1Parameter" value="0.6866419184246744" valueType="java.lang.Double"/>
                 </redundancy>
             </redundancyData>
         </frame>
@@ -118,7 +118,7 @@
         <toolTemplate class="" name="ScaleForceFixture">
             <frames>
                 <frame id="_318b84c2-fbbd-454a-a79b-1b8c4af49894" name="TCP">
-                    <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="37.0"/>
+                    <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
                 </frame>
             </frames>
             <additionalInformation>
