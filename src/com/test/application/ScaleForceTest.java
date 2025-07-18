@@ -65,7 +65,7 @@ public class ScaleForceTest extends RoboticsAPIApplication {
 		moveStartScaleForce();
 		for (int i = 0; i < 100; i++) {
 			if(i % 2 == 0){
-				ScaleForceFixture.move(lin(getApplicationData().getFrame("/PushOnScale")).setJointVelocityRel(0.2));
+				ScaleForceFixture.move(lin(getApplicationData().getFrame("/PushOnScale")).setJointVelocityRel(0.1));
 			} else {
 				ScaleForceFixture.move(lin(getApplicationData().getFrame("/StartScaleForce")).setJointVelocityRel(0.4));
 			}
