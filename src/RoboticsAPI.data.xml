@@ -82,10 +82,10 @@
                 </redundancy>
             </redundancyData>
         </frame>
-        <frame id="_dad74c96-2c8c-4f7b-ab9c-ad33823e611f" name="P4">
+        <frame id="_dad74c96-2c8c-4f7b-ab9c-ad33823e611f" name="PushOnScale">
             <transformation a="-3.1247113181552755" b="-0.016853306195610564" c="-3.137779450877673" x="-329.15568833082585" y="274.13514580453034" z="13.421031966145605"/>
             <additionalInformation>
-                <info key="LastModificationTime" type="java.lang.Long" value="1752837872197"/>
+                <info key="LastModificationTime" type="java.lang.Long" value="1752859478968"/>
                 <info base="LBR_Med_14_R820_1" controller="KUKA_Sunrise_Cabinet_1" device="LBR_Med_14_R820_1" tcpName="ScaleForceFixture/TCP" tool="ScaleForceFixture" type="com.kuka.roboticsAPI.deviceModel.TeachInformation">
                     <tcpTransformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="37.0"/>
                 </info>
