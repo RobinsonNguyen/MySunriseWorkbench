@@ -4,6 +4,7 @@ package com.test.application;
 import javax.inject.Inject;
 import com.kuka.roboticsAPI.applicationModel.RoboticsAPIApplication;
 import com.kuka.roboticsAPI.conditionModel.ForceCondition;
+import com.kuka.roboticsAPI.geometricModel.Tool;
 import com.kuka.roboticsAPI.motionModel.HRCMotions;
 import com.kuka.roboticsAPI.sensorModel.DataRecorder;
 import com.kuka.roboticsAPI.sensorModel.ForceSensorData;
@@ -46,10 +47,12 @@ public class ScaleForceTest extends RoboticsAPIApplication {
 	@Inject
 	private LBRMed robot;
 	private ForceSensorData sensorData;
+	private Tool ScaleForceFixture;
 
 	@Override
 	public void initialize() {
 		// initialize your application here
+		ScaleForceFixture.attachTo(robot.getFlange());
 	}
 
 	@Override
@@ -57,7 +60,7 @@ public class ScaleForceTest extends RoboticsAPIApplication {
 		// your application execution starts here
 		moveStartScaleForce();
 		for (int i = 0; i < 100; i++) {
-			sensorData = robot.getExternalForceTorque(robot.getFlange());
+			sensorData = robot.getExternalForceTorque(ScaleForceFixture.getFrame("/TCP"));
 			double xForce = sensorData.getForce().getX();
 			double yForce = sensorData.getForce().getY();
 			double zForce = sensorData.getForce().getZ();
