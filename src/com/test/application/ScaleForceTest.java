@@ -56,7 +56,7 @@ public class ScaleForceTest extends RoboticsAPIApplication {
 	@Override
 	public void initialize() {
 		// initialize your application here
-		//ScaleForceFixture.attachTo(robot.getFlange());
+		ScaleForceFixture.attachTo(robot.getFlange());
 	}
 
 	@Override
