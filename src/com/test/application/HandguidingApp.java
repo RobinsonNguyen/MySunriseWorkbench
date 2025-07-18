@@ -57,7 +57,7 @@ public class HandguidingApp extends RoboticsAPIApplication {
 	private void testMethod() {
 		int ret = 0;
 		while(ret != 2){
-			getApplicationUI().displayModalDialog(ApplicationDialogType.QUESTION, "Option?", "Param","Default","exit");
+			ret = getApplicationUI().displayModalDialog(ApplicationDialogType.QUESTION, "Option?", "Param","Default","exit");
 			
 			switch(ret){
 			case 0:

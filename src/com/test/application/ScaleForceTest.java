@@ -103,19 +103,15 @@ public class ScaleForceTest extends RoboticsAPIApplication {
 //		}
 	}
 	private void moveStartScaleForce() {
-		int ret = 0;
-		while(ret != 1){
-			getApplicationUI().displayModalDialog(ApplicationDialogType.QUESTION, "Move to starting point?", "Yes","No");
-			
-			switch(ret){
-			case 0:
-				getLogger().info("Moving to start frame...");
-				robot.move(ptp(getApplicationData().getFrame("/StartScaleForce")).setJointVelocityRel(0.4));
-				break;
-			case 1:
-				getLogger().info("doing nothing");
-				break;
-			}
+		int ret = getApplicationUI().displayModalDialog(ApplicationDialogType.QUESTION, "Move to starting point?", "Yes","No");
+		switch(ret){
+		case 0:
+			getLogger().info("Moving to start frame...");
+			robot.move(ptp(getApplicationData().getFrame("/StartScaleForce")).setJointVelocityRel(0.4));
+			break;
+		case 1:
+			getLogger().info("doing nothing");
+			break;
 		}
 	}
 }
