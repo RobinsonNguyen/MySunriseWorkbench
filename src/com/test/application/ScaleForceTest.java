@@ -67,7 +67,7 @@ public class ScaleForceTest extends RoboticsAPIApplication {
 			if(i % 2 == 0){
 				ScaleForceFixture.move(lin(getApplicationData().getFrame("/PushOnScale")).setJointVelocityRel(0.1));
 			} else {
-				ScaleForceFixture.move(lin(getApplicationData().getFrame("/StartScaleForce")).setJointVelocityRel(0.3));
+				ScaleForceFixture.move(lin(getApplicationData().getFrame("/StartScaleForce")).setJointVelocityRel(0.2));
 			}
 			sensorData = robot.getExternalForceTorque(ScaleForceFixture.getFrame("/TCP"));
 			double xForce = sensorData.getForce().getX();
