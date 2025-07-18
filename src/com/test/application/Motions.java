@@ -10,6 +10,7 @@ import com.kuka.roboticsAPI.motionModel.ErrorHandlingAction;
 import com.kuka.roboticsAPI.motionModel.IErrorHandler;
 import com.kuka.roboticsAPI.motionModel.IMotionContainer;
 import com.kuka.roboticsAPI.sensorModel.ForceSensorData;
+import com.kuka.roboticsAPI.uiModel.ApplicationDialogType;
 
 import static com.kuka.roboticsAPI.motionModel.BasicMotions.*;
 
@@ -62,7 +63,7 @@ public class Motions extends RoboticsAPIApplication {
 		double override = 0.4;
 		getApplicationControl().setApplicationOverride(override);
 		IMotionContainer imc = robot.move(ptp(getApplicationData().getFrame("/P3")).setJointVelocityRel(0.4));
-		
+		goHome();
 		while(!imc.isFinished()){
 			sensorData = robot.getExternalForceTorque(robot.getFlange());
 			double zForce = sensorData.getForce().getZ();
@@ -77,5 +78,18 @@ public class Motions extends RoboticsAPIApplication {
 		}
 		
 		
+	}
+	
+	private void goHome() {
+		int ret = getApplicationUI().displayModalDialog(ApplicationDialogType.QUESTION, "Go home?", "Yes","No");
+		switch(ret){
+		case 0:
+			getLogger().info("Going home...");
+			robot.move(ptpHome().setJointVelocityRel(0.2));
+			break;
+		case 1:
+			getLogger().info("Doing nothing");
+			break;
+		}
 	}
 }
