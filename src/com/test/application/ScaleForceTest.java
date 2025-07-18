@@ -2,6 +2,8 @@ package com.test.application;
 
 
 import javax.inject.Inject;
+import javax.inject.Named;
+
 import com.kuka.roboticsAPI.applicationModel.RoboticsAPIApplication;
 import com.kuka.roboticsAPI.conditionModel.ForceCondition;
 import com.kuka.roboticsAPI.geometricModel.Tool;
@@ -47,6 +49,8 @@ public class ScaleForceTest extends RoboticsAPIApplication {
 	@Inject
 	private LBRMed robot;
 	private ForceSensorData sensorData;
+	@Inject
+	@Named ("ScaleForceFixture")
 	private Tool ScaleForceFixture;
 
 	@Override
