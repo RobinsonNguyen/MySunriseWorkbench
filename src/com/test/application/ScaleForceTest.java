@@ -4,9 +4,11 @@ package com.test.application;
 import javax.inject.Inject;
 import com.kuka.roboticsAPI.applicationModel.RoboticsAPIApplication;
 import com.kuka.roboticsAPI.conditionModel.ForceCondition;
+import com.kuka.roboticsAPI.motionModel.HRCMotions;
 import com.kuka.roboticsAPI.sensorModel.DataRecorder;
 import com.kuka.roboticsAPI.sensorModel.ForceSensorData;
 import com.kuka.roboticsAPI.sensorModel.StartRecordingAction;
+import com.kuka.roboticsAPI.uiModel.ApplicationDialogType;
 
 import static com.kuka.roboticsAPI.motionModel.BasicMotions.*;
 
@@ -53,7 +55,7 @@ public class ScaleForceTest extends RoboticsAPIApplication {
 	@Override
 	public void run() {
 		// your application execution starts here
-		
+		moveStartScaleForce();
 		for (int i = 0; i < 100; i++) {
 			sensorData = robot.getExternalForceTorque(robot.getFlange());
 			double xForce = sensorData.getForce().getX();
@@ -92,6 +94,22 @@ public class ScaleForceTest extends RoboticsAPIApplication {
 //			getLogger().info("There was an error: " + e.toString());
 //			
 //		}
+	}
+	private void moveStartScaleForce() {
+		int ret = 0;
+		while(ret != 1){
+			getApplicationUI().displayModalDialog(ApplicationDialogType.QUESTION, "Option?", "Yes","No");
+			
+			switch(ret){
+			case 0:
+				getLogger().info("Moving to start frame...");
+				robot.move(ptp(getApplicationData().getFrame("StartScaleForce")).setJointVelocityRel(0.4));
+				break;
+			case 1:
+				getLogger().info("doing nothing");
+				break;
+			}
+		}
 	}
 }
 	

@@ -66,10 +66,10 @@
                 </redundancy>
             </redundancyData>
         </frame>
-        <frame id="_ca609eaf-93cb-4de4-9c3b-9e8ac02d691d" name="P4">
+        <frame id="_ca609eaf-93cb-4de4-9c3b-9e8ac02d691d" name="StartScaleForce">
             <transformation a="-2.8091763268073993" b="-0.0011895616359503408" c="-3.130830335553981" x="-328.7928702842336" y="275.10367371801055" z="94.40410273125184"/>
             <additionalInformation>
-                <info key="LastModificationTime" type="java.lang.Long" value="1752758629513"/>
+                <info key="LastModificationTime" type="java.lang.Long" value="1752854774548"/>
                 <info base="LBR_Med_14_R820_1" controller="KUKA_Sunrise_Cabinet_1" device="LBR_Med_14_R820_1" tcpName="Flange" tool="Flange" type="com.kuka.roboticsAPI.deviceModel.TeachInformation">
                     <tcpTransformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
                 </info>
@@ -98,6 +98,12 @@
                 <info key="SafetyID" type="java.lang.Integer" value="0"/>
             </additionalInformation>
             <loadData cogA="0.0" cogB="0.0" cogC="0.0" cogX="0.0" cogY="0.0" cogZ="0.0" inertiaX="0.0" inertiaY="0.0" inertiaZ="0.0" mass="2.0"/>
+        </toolTemplate>
+        <toolTemplate class="" name="ScaleForceFixture">
+            <additionalInformation>
+                <info key="SafetyID" type="java.lang.Integer" value="1"/>
+            </additionalInformation>
+            <loadData cogA="0.0" cogB="0.0" cogC="0.0" cogX="0.0" cogY="0.0" cogZ="37.0" inertiaX="0.0" inertiaY="0.0" inertiaZ="0.0" mass="0.033"/>
         </toolTemplate>
     </objectTemplates>
 </RoboticsAPIData>
