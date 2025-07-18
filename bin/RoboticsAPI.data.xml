@@ -118,7 +118,7 @@
         <toolTemplate class="" name="ScaleForceFixture">
             <frames>
                 <frame id="_318b84c2-fbbd-454a-a79b-1b8c4af49894" name="TCP">
-                    <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+                    <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="37.0"/>
                 </frame>
             </frames>
             <additionalInformation>
