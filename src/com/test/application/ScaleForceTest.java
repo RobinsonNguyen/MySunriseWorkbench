@@ -2,6 +2,7 @@ package com.test.application;
 
 
 import javax.inject.Inject;
+<<<<<<< HEAD
 import javax.inject.Named;
 
 import com.kuka.roboticsAPI.applicationModel.RoboticsAPIApplication;
@@ -27,6 +28,12 @@ import java.util.logging.SimpleFormatter;
 import java.io.FileWriter;
 import java.io.File;
 
+=======
+import com.kuka.roboticsAPI.applicationModel.RoboticsAPIApplication;
+import static com.kuka.roboticsAPI.motionModel.BasicMotions.*;
+import com.kuka.med.deviceModel.LBRMed;
+
+>>>>>>> 9c602af3e125f0b1cd6d792dec0673b2e7f4231e
 /**
  * Implementation of a robot application.
  * <p>
@@ -48,20 +55,27 @@ import java.io.File;
 public class ScaleForceTest extends RoboticsAPIApplication {
 	@Inject
 	private LBRMed robot;
+<<<<<<< HEAD
 	private ForceSensorData sensorData;
 	@Inject
 	@Named ("ScaleForceFixture")
 	private Tool ScaleForceFixture;
+=======
+>>>>>>> 9c602af3e125f0b1cd6d792dec0673b2e7f4231e
 
 	@Override
 	public void initialize() {
 		// initialize your application here
+<<<<<<< HEAD
 		ScaleForceFixture.attachTo(robot.getFlange());
+=======
+>>>>>>> 9c602af3e125f0b1cd6d792dec0673b2e7f4231e
 	}
 
 	@Override
 	public void run() {
 		// your application execution starts here
+<<<<<<< HEAD
 		int testing = moveStartScaleForce();
 		for (int i = 0; i < 100; i++) {
 			if(testing == 0){
@@ -126,3 +140,7 @@ public class ScaleForceTest extends RoboticsAPIApplication {
 	}
 }
 	
+=======
+	}
+}
+>>>>>>> 9c602af3e125f0b1cd6d792dec0673b2e7f4231e
