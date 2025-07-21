@@ -88,7 +88,7 @@ public class Motions extends RoboticsAPIApplication {
 			robot.move(ptpHome().setJointVelocityRel(0.4));
 			break;
 		case 1:
-			getLogger().info("Doing nothing");
+			getLogger().info("Staying here");
 			break;
 		}
 	}

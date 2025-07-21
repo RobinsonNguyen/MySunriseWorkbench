@@ -62,12 +62,14 @@ public class ScaleForceTest extends RoboticsAPIApplication {
 	@Override
 	public void run() {
 		// your application execution starts here
-		moveStartScaleForce();
+		int testing = moveStartScaleForce();
 		for (int i = 0; i < 100; i++) {
-			if(i % 2 == 0){
-				ScaleForceFixture.move(lin(getApplicationData().getFrame("/PushOnScale")).setJointVelocityRel(0.1));
-			} else {
-				ScaleForceFixture.move(lin(getApplicationData().getFrame("/StartScaleForce")).setJointVelocityRel(0.1));
+			if(testing == 0){
+				if(i % 2 == 0){
+					ScaleForceFixture.move(lin(getApplicationData().getFrame("/PushOnScale")).setJointVelocityRel(0.1));
+				} else {
+					ScaleForceFixture.move(lin(getApplicationData().getFrame("/StartScaleForce")).setJointVelocityRel(0.1));
+				}
 			}
 			sensorData = robot.getExternalForceTorque(ScaleForceFixture.getFrame("/TCP"));
 			double xForce = sensorData.getForce().getX();
@@ -107,17 +109,18 @@ public class ScaleForceTest extends RoboticsAPIApplication {
 //			
 //		}
 	}
-	private void moveStartScaleForce() {
-		int ret = getApplicationUI().displayModalDialog(ApplicationDialogType.QUESTION, "Move to starting point?", "Yes","No");
+	private int moveStartScaleForce() {
+		int ret = getApplicationUI().displayModalDialog(ApplicationDialogType.QUESTION, "Move to start test?", "Yes","No");
 		switch(ret){
 		case 0:
 			getLogger().info("Moving to start frame...");
 			ScaleForceFixture.move(ptp(getApplicationData().getFrame("/StartScaleForce")).setJointVelocityRel(0.4));
 			break;
 		case 1:
-			getLogger().info("doing nothing");
+			getLogger().info("Skipping test, getting force data instead");
 			break;
 		}
+		return ret;
 	}
 }
 	
