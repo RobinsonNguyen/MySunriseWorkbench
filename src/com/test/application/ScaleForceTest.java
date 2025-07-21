@@ -69,7 +69,7 @@ public class ScaleForceTest extends RoboticsAPIApplication {
 					getLogger().info("Pushing onto scale...");
 					ScaleForceFixture.move(lin(getApplicationData().getFrame("/PushOnScale")).setJointVelocityRel(0.1));
 				} else {
-					getLogger().info("Moving to start frame");
+					getLogger().info("Moving to start frame...");
 					ScaleForceFixture.move(lin(getApplicationData().getFrame("/StartScaleForce")).setJointVelocityRel(0.1));
 				}
 			}
